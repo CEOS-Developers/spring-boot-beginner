@@ -11,14 +11,18 @@ import java.util.Date;
 @Entity
 public class Delivery
 {
-
-    private @Id @GeneratedValue Long id;
-    private @Column @Lob String address;
-    private @Column String orderer;
-    private @Column String menu;
-
-    private @CreatedDate @Column Date createdAt;
-    private @CreatedDate @Column Date updatedAt;
+    @Id @GeneratedValue
+    private Long id;
+    @Column @Lob
+    private String address;
+    @Column
+    private String orderer;
+    @Column
+    private String menu;
+    @CreatedDate @Column
+    private Date createdAt;
+    @CreatedDate @Column
+    private Date updatedAt;
 
     Delivery() { }
 
@@ -38,5 +42,12 @@ public class Delivery
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
+    }
+
+    public void updateAddress(String address) {
+        this.address = address;
+    }
+    public void updateId(Long id) {
+        this.id = id;
     }
 }
